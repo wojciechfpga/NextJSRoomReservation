@@ -1,16 +1,10 @@
 "use client";
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import {apiPostRegister ,apiPostLogin} from '../../../services/apiService'
+export const loginUser = createAsyncThunk('auth/loginUser', apiPostLogin);
 
-export const loginUser = createAsyncThunk('auth/loginUser', async (credentials) => {
-  const response = await axios.post('http://localhost:5000/api/login', credentials);
-  return response.data;
-});
-
-export const registerUser = createAsyncThunk('auth/registerUser', async (userData) => {
-  const response = await axios.post('http://localhost:5000/api/register', userData);
-  return response.data;
-});
+export const registerUser = createAsyncThunk('auth/registerUser',apiPostRegister);
 
 const authSlice = createSlice({
   name: 'auth',

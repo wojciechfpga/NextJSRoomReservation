@@ -3,6 +3,16 @@ import { API_ROUTES } from '../config/apiRoutes';
 import { ERROR_MESSAGES } from '../config/errorMessages';
 import { ALERT_MESSAGES } from '../config/alertMessages';
 
+export const apiPostRegister = async (userData) => {
+  const response = await axios.post(API_ROUTES.REGISTER, userData);
+  return response.data;
+}
+
+export const apiPostLogin = async (credentials) => {
+  const response = await axios.post(API_ROUTES.LOGIN, credentials);
+  return response.data;
+}
+
 export const apiGetRetriveMyReservations = async (token) => {
   try {
     const response = await axios.get(API_ROUTES.MY_RESERVATIONS, {
