@@ -2,8 +2,8 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {apiPostRegister ,apiPostLogin} from '../../../services/apiService'
-export const loginUser = createAsyncThunk('auth/loginUser', apiPostLogin);
 
+export const loginUser = createAsyncThunk('auth/loginUser', apiPostLogin);
 export const registerUser = createAsyncThunk('auth/registerUser',apiPostRegister);
 
 const authSlice = createSlice({
